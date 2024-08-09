@@ -1,0 +1,28 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>top</title>
+</head>
+
+<body>
+  <ul class="user-list">
+    <% for (const user of users) { %>
+      <li class="user-name"><%= user %></li>
+    <% } %>
+  </ul>
+  <input type="text" class="input-text" />
+  <button class="send-button">送信</button>
+  <script src="/static/index.js" defer></script>
+
+  
+  <form method="post" action="/api/file" enctype="multipart/form-data">
+    <input type="file" name="input-file" accept=".txt">
+    <button class="submit">ファイルを送信する</button>
+  </form>
+</body>
+
+</html>
